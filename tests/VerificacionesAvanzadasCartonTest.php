@@ -9,13 +9,31 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que los números del carton se encuentren en el rango 1 a 90.
    */
-  public function testUnoANoventa() {
-    $this->assertTrue(TRUE);
+
+	/**
+	 * @dataprovider cartones
+	 */
+  public function testUnoANoventa(CartonInterface $carton) {
+	
+	$bien = true;
+	foreach ($carton->numerosDelCarton() as $num){
+		if($num >=1 && $num <= 90){
+		
+		}else{
+			$bien = false;
+		}
+	}
+	
+    $this->assertTrue($bien);
   }
 
   /**
    * Verifica que cada fila de un carton tenga exactamente 5 celdas ocupadas.
    */
+
+	/**
+	 * @dataprovider cartones
+	 */
   public function testCincoNumerosPorFila() {
     $this->assertTrue(TRUE);
   }
@@ -56,5 +74,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   public function testFilasConVaciosUniformes() {
     $this->assertTrue(TRUE);
   }
+
+ public function cartones(){ 
+	return [new CartonEjemplo, new CartonJs];
+}
 
 }
