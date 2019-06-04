@@ -90,7 +90,24 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * ocupada.
    */
   public function testTresCeldasIndividuales() {
-    $this->assertTrue(TRUE);
+	$carton = new CartonEjemplo;
+	$cantcolunacelda = 0;	
+	$flag = false;
+	foreach($carton->columnas as $col){
+		$cant = 0;
+		foreach($col as $num){
+			if($num != 0){
+				$cant++;		
+			}
+		}
+		if($cant == 1){	
+			$cantcolunacelda++;		
+		}
+	}
+	if($cantcolunacelda == 3){
+			$flag = true;
+	}
+    $this->assertTrue($flag);
   }
 
   /**
@@ -98,7 +115,28 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * las columnas a la derecha.
    */
   public function testNumerosIncrementales() {
-    $this->assertTrue(TRUE);
+	$carton = new CartonEjemplo;
+	$flag = true;
+	$i = 0;
+	$maxant = 0 ;
+	$minact = 0 ;
+	foreach($carton->columnas() as $col){
+		$i++;
+		
+		if(i>1){
+			
+			$minact= min(array_filter($col));
+			if( $maxant > $minact ){
+				$flag = false;						
+			}
+			$maxant = max(array_filter($col));			
+
+		}else{
+		$maxant = max(array_filter($col));
+		}
+	}
+	
+    $this->assertTrue($flag);
   }
 
   /**
