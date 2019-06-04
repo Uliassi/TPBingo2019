@@ -123,7 +123,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 	foreach($carton->columnas() as $col){
 		$iter++;
 		
-		if(i>1){
+		if($iter>1){
 			
 			$minact= min(array_filter($col));
 			if( $maxant > $minact ){
