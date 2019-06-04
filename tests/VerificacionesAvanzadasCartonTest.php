@@ -141,9 +141,11 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
   /**
    * Verifica que en una fila no existan más de dos celdas vacias consecutivas.
+   * @dataProvider cartones    
    */
-  public function testFilasConVaciosUniformes() {
-   $carton = new CartonEjemplo;
+ 
+  public function testFilasConVaciosUniformes(CartonInterface $carton) {
+   //$carton = new CartonEjemplo;
    $flag = true;
 
 	foreach($carton->filas() as $fila){
