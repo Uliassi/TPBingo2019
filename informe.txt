@@ -1,0 +1,12 @@
+1)
+el archivo .gitignore es una herramienta de git que se utiliza para ignorar todos aquellos
+directorios y archivos que esten especificados dentro de este. El archivo debe estar dentro
+del repositorio con este nombre y git automaticamente ejecutara esta herramienta.
+
+2)
+travis.yml se utiliza como un archivo que contiene las instrucciones para que Travis.CI 
+haga las pruebas correspondientes al repositorio en donde creemos este archivo y ejecutemos
+la aplicacion Travis.CI. El archivo se debe crear en el repositorio donde queremos hacer los
+test. Sin este archivo Travis.CI no va a poder ejecutar su test.
+
+3)
