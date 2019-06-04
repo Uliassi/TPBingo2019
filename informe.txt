@@ -8,4 +8,12 @@ haga las pruebas correspondientes al repositorio en donde creemos este archivo y
 la aplicacion Travis.CI. El archivo se debe crear en el repositorio donde queremos hacer los
 test. Sin este archivo Travis.CI no va a poder ejecutar su test.
 
+Lineas:
+1: se especifica el lenguaje del archivo al que testea.
+2 y 3: se especifica la version del lenguaje
+5 y 6: composer es una herramienta de instalacion de paquetes de php.
+Con el argumento "--prefer-source" se le solicita
+que actualice los paquetes que se encuentran dentro del archivo composer.lock dentro de la misma
+carpeta donde se encuentra el archivo .travis.yml
+
 3)
