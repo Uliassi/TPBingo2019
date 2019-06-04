@@ -170,7 +170,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
     $this->assertTrue($flag);
   }
 
- public function cartones(){ 
+ public static function cartones(){ 
 	return array(
       new CartonEjemplo,
 	  new CartonJs
