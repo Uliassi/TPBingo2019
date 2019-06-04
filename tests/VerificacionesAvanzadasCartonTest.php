@@ -93,7 +93,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 	$carton = new CartonEjemplo;
 	$cantcolunacelda = 0;	
 	$flag = false;
-	foreach($carton->columnas as $col){
+	foreach($carton->columnas() as $col){
 		$cant = 0;
 		foreach($col as $num){
 			if($num != 0){
@@ -117,11 +117,11 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   public function testNumerosIncrementales() {
 	$carton = new CartonEjemplo;
 	$flag = true;
-	$i = 0;
+	$iter = 0;
 	$maxant = 0 ;
 	$minact = 0 ;
 	foreach($carton->columnas() as $col){
-		$i++;
+		$iter++;
 		
 		if(i>1){
 			
