@@ -8,10 +8,11 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
   /**
    * Verifica que los números del carton se encuentren en el rango 1 a 90.
+   * @dataProvider cartones 
    */
 
-  public function testUnoANoventa() {
-	$carton = new CartonEjemplo;
+  public function testUnoANoventa(CartonInterface $carton) {
+	//$carton = new CartonEjemplo;
 	$bien = true;
 	foreach ($carton->numerosDelCarton() as $num){
 		if($num >=1 && $num <= 90){
@@ -26,11 +27,12 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
   /**
    * Verifica que cada fila de un carton tenga exactamente 5 celdas ocupadas.
+   * @dataProvider cartones 
    */
 
 
-  public function testCincoNumerosPorFila() {
-	$carton = new CartonEjemplo;
+  public function testCincoNumerosPorFila(CartonInterface $carton) {
+	//$carton = new CartonEjemplo;
 	$flag = true;
 	foreach( $carton->filas() as $fila ){
 		$cont = 0;
@@ -51,9 +53,10 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
   /**
    * Verifica que para cada columna, haya al menos una celda ocupada.
+   * @dataProvider cartones 
    */
-  public function testColumnaNoVacia() {
-	$carton = new CartonEjemplo;
+  public function testColumnaNoVacia(CartonInterface $carton) {
+	//$carton = new CartonEjemplo;
 	$flag = false;
 	foreach($carton->columnas() as $col ){
 		foreach($col as $num){
@@ -67,9 +70,10 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
   /**
    * Verifica que no haya columnas de un carton con tres celdas ocupadas.
+   * @dataProvider cartones 
    */
-  public function testColumnaCompleta() {
-	$carton = new CartonEjemplo;
+  public function testColumnaCompleta(CartonInterface $carton) {
+	//$carton = new CartonEjemplo;
 	$flag = true;	
 	foreach( $carton->columnas() as $col ){	
 		$cant = 0;	
@@ -88,9 +92,10 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que solo hay exactamente tres columnas que tienen solo una celda
    * ocupada.
+   * @dataProvider cartones 
    */
-  public function testTresCeldasIndividuales() {
-	$carton = new CartonEjemplo;
+  public function testTresCeldasIndividuales(CartonInterface $carton) {
+	//$carton = new CartonEjemplo;
 	$cantcolunacelda = 0;	
 	$flag = false;
 	foreach($carton->columnas() as $col){
@@ -113,9 +118,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que los números de las columnas izquierdas son menores que los de
    * las columnas a la derecha.
+   * @dataProvider cartones 
    */
-  public function testNumerosIncrementales() {
-	$carton = new CartonEjemplo;
+  public function testNumerosIncrementales(CartonInterface $carton) {
 	$flag = true;
 	$iter = 0;
 	$maxant = 0 ;
