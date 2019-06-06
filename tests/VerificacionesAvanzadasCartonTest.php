@@ -12,7 +12,6 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
 
   public function testUnoANoventa(CartonInterface $carton) {
-	//$carton = new CartonEjemplo;
 	$bien = true;
 	foreach ($carton->numerosDelCarton() as $num){
 		if($num >=1 && $num <= 90){
@@ -32,7 +31,6 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
 
   public function testCincoNumerosPorFila(CartonInterface $carton) {
-	//$carton = new CartonEjemplo;
 	$flag = true;
 	foreach( $carton->filas() as $fila ){
 		$cont = 0;
@@ -56,7 +54,6 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * @dataProvider cartones 
    */
   public function testColumnaNoVacia(CartonInterface $carton) {
-	//$carton = new CartonEjemplo;
 	$flag = false;
 	foreach($carton->columnas() as $col ){
 		foreach($col as $num){
@@ -73,7 +70,6 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * @dataProvider cartones 
    */
   public function testColumnaCompleta(CartonInterface $carton) {
-	//$carton = new CartonEjemplo;
 	$flag = true;	
 	foreach( $carton->columnas() as $col ){	
 		$cant = 0;	
@@ -95,7 +91,6 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * @dataProvider cartones 
    */
   public function testTresCeldasIndividuales(CartonInterface $carton) {
-	//$carton = new CartonEjemplo;
 	$cantcolunacelda = 0;	
 	$flag = false;
 	foreach($carton->columnas() as $col){
@@ -150,32 +145,27 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
  
   public function testFilasConVaciosUniformes(CartonInterface $carton) {
-   //$carton = new CartonEjemplo;
    $flag = true;
 
 	foreach($carton->filas() as $fila){
-		$antcero = false;
+		$suma = 0;
 		foreach($fila as $num){
-			if($num == 0 && $antcero == true){
+			if($num == 0){
+				$suma++;			
+			}else{
+				$suma = 0;			
+			}
+			
+			if($suma == 3){
 				$flag = false;			
 			}
-			if($num == 0){
-				$antcero = true;			
-			}else{
-				$antcero = false;			
-			}
+			
 		}
 	}
 	
     $this->assertTrue($flag);
   }
-/*
- public static function cartones(){ 
-	return array(
-      new CartonEjemplo,
-	  new CartonJs
-    );
-}*/
+
 
 public function cartones(){
         return [ [new CartonEjemplo],[new CartonJs] ];
