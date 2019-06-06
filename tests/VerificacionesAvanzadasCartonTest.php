@@ -177,9 +177,8 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
     );
 }*/
 
-public function cartones(): iterable{
-        yield [new CartonEjemplo];
-	yield [new CartonJs];
+public function cartones(){
+        return [ [new CartonEjemplo],[new CartonJs] ];
     }
 
 }
