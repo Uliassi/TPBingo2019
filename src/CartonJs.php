@@ -62,6 +62,3 @@ class CartonJs implements CartonInterface {
 
 }
 
-$carton = new CartonJs;
-
-print_r($carton->columnas());
