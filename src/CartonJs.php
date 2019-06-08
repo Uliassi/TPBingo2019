@@ -1,6 +1,6 @@
 <?php
 
-//namespace Bingo;
+namespace Bingo;
 /**
  * Este es un Carton de generado con
  * https://github.com/vicmagv/bingo-card-generator/blob/master/generar_carton.js

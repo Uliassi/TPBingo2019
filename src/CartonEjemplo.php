@@ -1,6 +1,6 @@
 <?php
 
-//namespace Bingo;
+namespace Bingo;
 
 /**
  * Este es un Carton de Ejemplo.
