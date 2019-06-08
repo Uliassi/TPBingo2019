@@ -12,9 +12,9 @@ class CartonJs implements CartonInterface {
 
   public function __construct() {
     $this->numeros_carton = [
-      [4,0,24,31,40,32,0,0,80],
-      [0,13,0,39,48,0,66,72,0],
-      [1,0,27,0,0,50,0,73,86],
+      [4,	0,		24,		31,		40,		51,		0,		0,		80],
+      [0,	13,		0,		39,		48,		0,		66,		72,		0],
+      [1,	0,		27,		0,		0,		50,		0,		0,		86],
     ];
   }
 
@@ -22,7 +22,7 @@ class CartonJs implements CartonInterface {
    * {@inheritdoc}
    */
   public function filas() {
-    return = $this->numeros_carton;
+    return $this->numeros_carton;
   }
 
   /**
