@@ -1,10 +1,5 @@
 # Trabajo Práctico Integrador - 2019
 
-Nuestro: [![Build Status](https://travis-ci.org/Uliassi/TPBingo2019.svg?branch=master)](https://travis-ci.org/Uliassi/TPBingo2019)
-
-Dagos: [![Build Status](https://travis-ci.org/dagostinoips/TPBingo2019.svg?branch=master)](https://travis-ci.org/dagostinoips/TPBingo2019)
-
-![Selection_497](https://user-images.githubusercontent.com/14078528/58498174-e1148d80-8153-11e9-9c45-626c9a33858f.png)
 
 ## Consignas
 
@@ -18,14 +13,5 @@ Dagos: [![Build Status](https://travis-ci.org/dagostinoips/TPBingo2019.svg?branc
 - Investigue que significa el comentario `{@inheritdoc}` que figura en los métodos de la clase `CartonJs` y `CartonEjemplo`.
 - ¿Por que las clases del directorio `tests` extienden de la clase `TestCase`? ¿Qué significa que una clase extienda a otra clase?
 
-### Código
-
-- **Importante** Por ahora trabajar con el ejemplo de números provisto en el repositorio. No hay que hacer un generador de bingos automáticos.
-- Realizar un fork de este repositorio.
-- Conectar la ejecución de tests con travis. [Instrucciones](https://github.com/dagostinoips/TPBingo2019/wiki/Como-conectar-un-proyecto-con-travis)
-- Completar los tests de la clase `tests/VerificacionesAvanzadasCartonTest.php`
-- Verificar que pasen para la clase CartonEjemplo, pero fallen para la clase CartonJs.
-- Luego de verificar que los tests fallen (con un commit), arreglar la clase CartonJs para que no falle más.
-- Reemplazar la implementación de `lineas()` y `columnas()` para no repetir el código del constructor.
 
 
