@@ -36,7 +36,7 @@ class CartonJs implements CartonInterface {
 	  $coltot = [];
 	  $index = 0;
 	  foreach( $this->numeros_carton as $col ){
-		  $coltot = $coltot + [$this->numeros_carton[0][index],$this->numeros_carton[1][index] , $this->numeros_carton[2][index] ]
+		  $coltot = $coltot + [$this->numeros_carton[0][$index],$this->numeros_carton[1][$index] , $this->numeros_carton[2][$index] ]
 		  $index++;
 	  }
 	  
