@@ -36,7 +36,7 @@ class CartonJs implements CartonInterface {
 		  $index++;
 	  }
 	  
-    return $coltot;
+    return [$coltot];
   }
 
   /**
