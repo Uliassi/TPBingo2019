@@ -23,7 +23,10 @@ carpeta donde se encuentra el archivo .travis.yml
 
 3)
 4)
-5)
-6)
-7)
+
+5)Namespace:
+
+6) // {@inheritdoc}
+
+7) extends TestCase
 
