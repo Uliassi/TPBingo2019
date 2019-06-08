@@ -33,17 +33,14 @@ class CartonJs implements CartonInterface {
    * {@inheritdoc}
    */
   public function columnas() {
-    return [
-      [4,0,1],
-      [0,13,0],
-      [24,0,27],
-      [31,39,0],
-      [40,48,0],
-      [32,0,50],
-      [0,66,0],
-      [0,72,73],
-      [80,0,86],
-    ];
+	  $coltot = [];
+	  $index = 0;
+	  foreach( $this->numeros_carton as $col ){
+		  $coltot = $coltot + [$this->numeros_carton[0][index],$this->numeros_carton[1][index] , $this->numeros_carton[2][index] ]
+		  $index++;
+	  }
+	  
+    return $coltot;
   }
 
   /**
