@@ -1,7 +1,7 @@
 <?php
 
 namespace Bingo;
-
+include('CartonInterface.php');
 /**
  * Este es un Carton de generado con
  * https://github.com/vicmagv/bingo-card-generator/blob/master/generar_carton.js
@@ -31,12 +31,12 @@ class CartonJs implements CartonInterface {
   public function columnas() {
 	  $coltot = [];
 	  $index = 0;
-	  foreach( $this->numeros_carton as $col ){
-		  $coltot = $coltot + [$this->numeros_carton[0][$index],$this->numeros_carton[1][$index] , $this->numeros_carton[2][$index] ];
+	  foreach( $this->numeros_carton[$index] as $fila ){
+			$coltot[] = [$this->numeros_carton[0][$index],$this->numeros_carton[1][$index] , $this->numeros_carton[2][$index] ];
 		  $index++;
 	  }
 	  
-    return [$coltot];
+    return $coltot;
   }
 
   /**
@@ -62,3 +62,7 @@ class CartonJs implements CartonInterface {
   }
 
 }
+
+$carton = new CartonJs;
+
+print_r($carton->columnas());
