@@ -18,22 +18,48 @@ Con el argumento "--prefer-source" se le solicita
 que actualice los paquetes que se encuentran dentro del archivo composer.lock dentro de la misma
 carpeta donde se encuentra el archivo .travis.yml
 
-8 y 9:
-
+8 y 9:el comando script especifica el script a ejecutar para la construcción del proyecto para
+testear.
+- php vendor/bin/phpunit --color tests especifica que script y que la salida de los tests
+siempre tengan colores.
 
 3)
-4)
+composer.json define las dependencias y requerimientos de un proyecto.
+"autoload" sirve como un cargador automatico de clases para nuestro proyecto.
+"psr-4": { "Bingo\\": "src" } esta indicando que las clases del namespace "Bingo" (que se 
+encuentran en ambos tests) se encuentran en el directorio "src" que esta en la raiz.
+"require": { "phpunit/phpunit": "^6" } esta diciendo que phpunit requiere la version 6 en este
+proyecto.
+composer.lock registra todos los paquetes instalados y la versión instalada de cada uno de ellos.
+Para ello usa una serie grande de especificaciones en donde podemos encontrar por ejemplo el
+nombre de la version, la fecha, el campo "autoload", el campo "psr-4", el campo "require", etc.
+Lo que sucede al ejecutar un test es que la primera vez lee las dependencias de nuestro 
+proyecto en composer.json, instala los paquetes, crea el archivo composer.lock en donde va 
+anotando todos los paquetes instalados y las versiones instaladas de cada uno de ellos y las 
+proximas veces que se ejecuta el test instala los paquetes con sus versiones correspondientes 
+especificados en el archivo composer.lock.
 
-5)Namespace: Espacio de nombre. Se utiliza para referenciar archivos entre si. Solo sirve para ordenar archivos. Por ejemplo, Si dos archivos se encuentran dentro 
+4)
+Una alternativa para Node.js es el gestor de paquetes NPM (Node Packaged Manager) la cual se 
+maneja a traves de modulos llamados NPMs (Node Packaged Modules) y estos corresponden a librerías
+que pueden ser compartidas y reutilizadas entre diferentes proyectos.
+Una alternativa para ruby es Bundler es un entorno para los proyectos de Ruby para gestionar
+versiones de un proyecto de Ruby.
+
+
+5)
+Namespace: Espacio de nombre. Se utiliza para referenciar archivos entre si. Solo sirve para ordenar archivos. Por ejemplo, Si dos archivos se encuentran dentro 
 del mismo namespace, pueden utilizar (de ser publicas) las funciones del otro archivo. De esta manera podemos tener funciones con el mismo nombre, o archivos con el mismo 
 nombre, pero podemos hacerles referencias mediantes distintos namespaces.
 Si lo quitamos, las clases que necesiten implementar interfaces fallaran, ya que no encontraran la interface.
 
-6) // {@inheritdoc}: Inherit: herencia / doc: Documentacion.
+6) 
+// {@inheritdoc}: Inherit: herencia / doc: Documentacion.
 Esta etiqueta hace referencia a la documentacion de la funcion "padre". Es decir, cuando estemos documentando una funcion, podemos importar la documentacion de la funcion de la cual hereda. De esta manera,
 tenemos una descripcion mas amplia en la funcion padre, y luego una mas especifica en la funcion heredera, conteniendo a la documentacion de la funcion padre.
 
-7) extends TestCase:
+7) 
+extends TestCase:
 Las clases del directorio tests extienden de la clase TestCase, porque justamente son tests que PHPUnit debe correr. Necesitan extender de esta clase para poder utilizar el metodo assertTrue().
 Que una clase extienda de otra significa que la clase hijo hereda todos los metodos y propiedades de la clase padre, es decir, que la clase hijo puede utilizar todas las funciones y variables que esten declarados
 dentro de la clase padre.
