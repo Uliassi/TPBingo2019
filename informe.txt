@@ -1,4 +1,4 @@
-1)
+﻿1)
 
 el archivo .gitignore es una herramienta de git que se utiliza para ignorar todos aquellos
 directorios y archivos que esten especificados dentro de este. El archivo debe estar en la 
@@ -53,7 +53,8 @@ versiones de un proyecto de Ruby.
 
 5)
 
-Namespace: Espacio de nombre. Se utiliza para referenciar archivos entre si. Solo sirve para ordenar archivos. Por ejemplo, Si dos archivos se encuentran dentro 
+Namespace: Espacio de nombre.
+Se utiliza para referenciar archivos entre si. Solo sirve para ordenar archivos. Por ejemplo, Si dos archivos se encuentran dentro 
 del mismo namespace, pueden utilizar (de ser publicas) las funciones del otro archivo. De esta manera podemos tener funciones con el mismo nombre, o archivos con el mismo 
 nombre, pero podemos hacerles referencias mediantes distintos namespaces.
 Si lo quitamos, las clases que necesiten implementar interfaces fallaran, ya que no encontraran la interface.
