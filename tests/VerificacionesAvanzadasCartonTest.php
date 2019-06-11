@@ -12,6 +12,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
 
   public function testUnoANoventa(CartonInterface $carton) {
+
+	
+
 	$bien = true;
 	foreach ($carton->numerosDelCarton() as $num){
 		if($num >=1 && $num <= 90){
@@ -54,12 +57,16 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * @dataProvider cartones 
    */
   public function testColumnaNoVacia(CartonInterface $carton) {
-	$flag = false;
+	$flag = true;
 	foreach($carton->columnas() as $col ){
+		$alguno = false;
 		foreach($col as $num){
-				if($num != 0){
-					$flag = true;
-				}
+			if($num != 0){
+				$alguno = true;
+			}
+		}
+		if(alguno == false){
+			$flag = false;
 		}	
 	}
     $this->assertTrue($flag);
@@ -168,7 +175,10 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
 
 public function cartones(){
-        return [ [new CartonEjemplo],[new CartonJs] ];
+
+	$fabrica = new FabricaCartones;
+	$carton = new Carton($fabrica->generarCarton() );
+        return [ $carton ];
     }
 
 }
