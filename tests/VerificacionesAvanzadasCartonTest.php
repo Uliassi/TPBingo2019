@@ -63,7 +63,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 				$alguno = true;
 			}
 		}
-		if(alguno == false){
+		if($alguno == false){
 			$flag = false;
 		}	
 	}
