@@ -14,6 +14,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   public function testUnoANoventa(CartonInterface $carton) {
 
 	$bien = true;
+var_dump($carton);
 	foreach ($carton->numerosDelCarton() as $num){
 		if($num >=1 && $num <= 90){
 		
@@ -173,7 +174,10 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
 
 public function cartones(){
-        return [ [new Carton( (new FabricaCartones)->generarCarton() )] , [new CartonEjemplo]  ]  ;
+        return [ 
+[new Carton( (new FabricaCartones)->generarCarton() )] 
+, [new CartonEjemplo],  
+]  ;
     }
 
 }
