@@ -5,7 +5,7 @@ namespace Bingo;
 class Carton implements CartonInterface {
 	protected $numeros_carton = [];
 
-  public function __construct(array $p_carton) {
+  public function __construct($p_carton) {
 		$this->numeros_carton = $p_carton;
   }
 
