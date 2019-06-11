@@ -2,8 +2,8 @@
 
 namespace Bingo;
 
-class Carton {
-			protected $carton = [];
+class Carton implements CartonInterface {
+	protected $carton = [];
 
   public function __construct(array $p_carton) {
 		$this->carton = $p_carton;
