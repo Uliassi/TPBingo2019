@@ -14,20 +14,20 @@ class FabricaCartones {
   }
 
   protected function cartonEsValido($carton) {
-    if (validarUnoANoventa($carton) &&
-      validarCincoNumerosPorFila($carton) &&
-      validarColumnaNoVacia($carton) &&
-      validarColumnaCompleta($carton) &&
-      validarTresCeldasIndividuales($carton) &&
-      validarNumerosIncrementales($carton) &&
-      validarFilasConVaciosUniformes($carton)
+    if (validarUnoANoventa2($carton) &&
+      validarCincoNumerosPorFila2($carton) &&
+      validarColumnaNoVacia2($carton) &&
+      validarColumnaCompleta2($carton) &&
+      validarTresCeldasIndividuales2($carton) &&
+      validarNumerosIncrementales2($carton) &&
+      validarFilasConVaciosUniformes2($carton)
     ) {
       return TRUE;
     }
     return FALSE;
   }
 
-  protected function validarUnoANoventa($carton) {
+  protected function validarUnoANoventa2($carton) {
 	$bien = true;
 	foreach ($carton->numerosDelCarton() as $num){
 		if($num >=1 && $num <= 90){
@@ -39,7 +39,7 @@ class FabricaCartones {
 	return $bien;
   }
 
-  protected function validarCincoNumerosPorFila($carton) {
+  protected function validarCincoNumerosPorFila2($carton) {
 	$flag = true;
 	foreach( $carton->filas() as $fila ){
 		$cont = 0;
@@ -56,7 +56,7 @@ class FabricaCartones {
 	return $flag;
   }
 
-  protected function validarColumnaNoVacia($carton) {
+  protected function validarColumnaNoVacia2($carton) {
 	$flag = true;
 	foreach($carton->columnas() as $col ){
 		$alguno = false;
@@ -72,7 +72,7 @@ class FabricaCartones {
 	return $flag;
   }
 
-  protected function validarColumnaCompleta($carton) {
+  protected function validarColumnaCompleta2($carton) {
 	$flag = true;	
 	foreach( $carton->columnas() as $col ){	
 		$cant = 0;	
@@ -88,7 +88,7 @@ class FabricaCartones {
 	return $flag;
   }
 
-  protected function validarTresCeldasIndividuales($carton) {
+  protected function validarTresCeldasIndividuales2($carton) {
 	$cantcolunacelda = 0;	
 	$flag = false;
 	foreach($carton->columnas() as $col){
@@ -108,7 +108,7 @@ class FabricaCartones {
 	return $flag;
   }
 
-  protected function validarNumerosIncrementales($carton) {
+  protected function validarNumerosIncrementales2($carton) {
 	$flag = true;
 	$iter = 0;
 	$maxant = 0 ;
@@ -131,7 +131,7 @@ class FabricaCartones {
 	return $flag;
   }
 
-  protected function validarFilasConVaciosUniformes($carton) {
+  protected function validarFilasConVaciosUniformes2($carton) {
 	$flag = true;
 
 	foreach($carton->filas() as $fila){
