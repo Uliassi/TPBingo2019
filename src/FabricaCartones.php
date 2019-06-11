@@ -5,15 +5,16 @@ namespace Bingo;
 class FabricaCartones {
 
   public function generarCarton() {
-    // Algo de pseudo-código para ayudar con la evaluacion.	
-	$carton = $this->intentoCarton();
+    // Algo de pseudo-código para ayudar con la evaluacion.
+	
+	$carton = new Carton( $this->intentoCarton() );
 	    while ($this->cartonEsValido($carton) == false) {
-	    	$carton = $this->intentoCarton();  
+	    	$carton = new Carton( $this->intentoCarton() ); 
 	    }
 	return $carton;
   }
 
-  protected function cartonEsValido($carton) {
+  protected function cartonEsValido(CartonInterface $carton) {
     if ($this->validarUnoANoventa($carton) &&
       $this->validarCincoNumerosPorFila($carton) &&
       $this->validarColumnaNoVacia($carton) &&
@@ -24,10 +25,11 @@ class FabricaCartones {
     ) {
       return TRUE;
     }
+ 
     return FALSE;
   }
 
-  public function validarUnoANoventa($carton) {
+  public function validarUnoANoventa(CartonInterface $carton) {
 	$bien = true;
 	foreach ($carton->numerosDelCarton() as $num){
 		if($num >=1 && $num <= 90){
@@ -36,10 +38,13 @@ class FabricaCartones {
 			$bien = false;
 		}
 	}
+	if(!$bien){
+		 echo "1\n";	
+	}
 	return $bien;
   }
 
-  protected function validarCincoNumerosPorFila($carton) {
+  protected function validarCincoNumerosPorFila(CartonInterface $carton) { /// NO ANDA ESTOOOOO
 	$flag = true;
 	foreach( $carton->filas() as $fila ){
 		$cont = 0;
@@ -53,10 +58,13 @@ class FabricaCartones {
 		}		
 
 	}
+	if(!$flag){
+		 echo "2\n";	
+	}
 	return $flag;
   }
 
-  protected function validarColumnaNoVacia($carton) {
+  protected function validarColumnaNoVacia(CartonInterface $carton) {
 	$flag = true;
 	foreach($carton->columnas() as $col ){
 		$alguno = false;
@@ -69,10 +77,13 @@ class FabricaCartones {
 			$flag = false;
 		}	
 	}
+	if(!$flag){
+		 echo "3\n";	
+	}
 	return $flag;
   }
 
-  protected function validarColumnaCompleta($carton) {
+  protected function validarColumnaCompleta(CartonInterface $carton) {
 	$flag = true;	
 	foreach( $carton->columnas() as $col ){	
 		$cant = 0;	
@@ -85,10 +96,13 @@ class FabricaCartones {
 		$flag = false;
 		}
 	}
+	if(!$flag){
+		 echo "4\n";	
+	}
 	return $flag;
   }
 
-  protected function validarTresCeldasIndividuales($carton) {
+  protected function validarTresCeldasIndividuales(CartonInterface $carton) {
 	$cantcolunacelda = 0;	
 	$flag = false;
 	foreach($carton->columnas() as $col){
@@ -105,10 +119,13 @@ class FabricaCartones {
 	if($cantcolunacelda == 3){
 			$flag = true;
 	}
+	if(!$flag){
+		 echo "5\n";	
+	}
 	return $flag;
   }
 
-  protected function validarNumerosIncrementales($carton) {
+  protected function validarNumerosIncrementales(CartonInterface $carton) {
 	$flag = true;
 	$iter = 0;
 	$maxant = 0 ;
@@ -128,10 +145,13 @@ class FabricaCartones {
 		$maxant = max(array_filter($col));
 		}
 	}
+	if(!$flag){
+		 echo "6\n";	
+	}
 	return $flag;
   }
 
-  protected function validarFilasConVaciosUniformes($carton) {
+  protected function validarFilasConVaciosUniformes(CartonInterface $carton) {
 	$flag = true;
 
 	foreach($carton->filas() as $fila){
@@ -148,6 +168,9 @@ class FabricaCartones {
 			}
 			
 		}
+	}
+	if(!$flag){
+		 echo "7\n";	
 	}
 	return $flag;
   }
