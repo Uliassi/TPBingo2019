@@ -6,7 +6,7 @@ class Carton implements CartonInterface {
 	protected $numeros_carton = [];
 
   public function __construct(array $p_carton) {
-		$this->carton = $p_carton;
+		$this->numeros_carton = $p_carton;
   }
 
   public function filas() {
@@ -39,7 +39,7 @@ class Carton implements CartonInterface {
   }
 
 public function tieneNumero(int $numero) {
-	return	in_array($numero, $this->numerosDelCarton());
+	return	in_array($numero, $this->numerosDelCarton() );
   }
 
 }
