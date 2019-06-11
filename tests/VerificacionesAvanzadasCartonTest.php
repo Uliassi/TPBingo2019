@@ -14,7 +14,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   public function testUnoANoventa(CartonInterface $carton) {
 
 	$bien = true;
-var_dump($carton);
+	var_dump($carton);
 	foreach ($carton->numerosDelCarton() as $num){
 		if($num >=1 && $num <= 90){
 		
