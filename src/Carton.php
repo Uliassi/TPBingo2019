@@ -12,8 +12,6 @@ class Carton implements CartonInterface {
   public function __construct($p_carton) {
 		$this->numeros_carton = $this->darvuelta($p_carton);
 		$this->columnas = $p_carton;
-		//echo "asdas";
-		//print_r($p_carton);
   }
 
   public function filas() {
@@ -96,7 +94,7 @@ foreach( ($carton->filas()[0]) as $fila ){
 //print_r( $carton->columnas());
 //echo "askjdhakjsdas\n\n";
 //print_r( (new CartonEjemplo)->columnas());
-//$carton = new Carton( (new FabricaCartones)->intentoCarton() );
+//$carton = new Carton( (new FabricaCartones)->generarCarton() );
 //$carton = new CartonEjemplo;
 //print_r( $carton->columnas()   );
 
