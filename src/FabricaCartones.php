@@ -59,7 +59,8 @@ class FabricaCartones {
 
 	}
 	if(!$flag){
-		 echo "2\n";	
+		 echo "2\n";
+		var_dump($carton->filas());
 	}
 	return $flag;
   }
@@ -73,7 +74,7 @@ class FabricaCartones {
 				$alguno = true;
 			}
 		}
-		if(alguno == false){
+		if($alguno == false){
 			$flag = false;
 		}	
 	}
