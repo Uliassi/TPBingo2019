@@ -9,19 +9,32 @@ class Carton implements CartonInterface {
 	protected $numeros_carton = [];
 
   public function __construct(array $p_carton) {
-		$this->numeros_carton = $p_carton;
+		$this->numeros_carton = $this->darvuelta($p_carton);
   }
 
-  public function columnas() {
+  public function filas() {
 		return $this->numeros_carton;
   }
 
+ public function darvuelta($arr){
+		$rta = [];
+	$indey = 0;
+	foreach($arr as $col){
+			$index = 0;
+		foreach($col as $num){
+			$rta[$index][$indey] =$num ;
+			$index++;
+		}	
+	$indey++;
+	}
+	return $rta;
+ }
 
-  public function filas() { // tuve que cambiarlo porque estan invertidas filas y columnas
+  public function columnas() { 
 	   $coltot = [];
 		  $index = 0;
 		  foreach( $this->numeros_carton[$index] as $fila ){
-				$coltot[] = [$this->numeros_carton[0][$index],$this->numeros_carton[1][$index] , $this->numeros_carton[2][$index], $this->numeros_carton[3][$index], $this->numeros_carton[4][$index], $this->numeros_carton[5][$index], $this->numeros_carton[6][$index], $this->numeros_carton[7][$index], $this->numeros_carton[8][$index] ];
+				$coltot[] = [ $this->numeros_carton[0][$index],$this->numeros_carton[1][$index] , $this->numeros_carton[2][$index] ];
 			  $index++;
 		  }
 		  
@@ -49,5 +62,5 @@ public function tieneNumero(int $numero) {
 
 /*print_r( (new Carton( (new FabricaCartones)->intentoCarton() ) )->columnas());
 echo "askjdhakjsdas\n\n";
-print_r( (new CartonEjemplo)->columnas());
-*/
+print_r( (new CartonEjemplo)->columnas());*/
+
