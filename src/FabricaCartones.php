@@ -98,6 +98,8 @@ class FabricaCartones {
 	}
 	if(!$flag){
 		 echo "4\n";	
+		print_r($carton->columnas());
+		
 	}
 	return $flag;
   }
@@ -120,7 +122,10 @@ class FabricaCartones {
 			$flag = true;
 	}
 	if(!$flag){
-		 echo "5\n";	
+		 echo "5\n";
+		print_r($carton->columnas());
+		
+			
 	}
 	return $flag;
   }
@@ -248,6 +253,7 @@ class FabricaCartones {
     }
 	
     return $carton;
+  
   }
 
 

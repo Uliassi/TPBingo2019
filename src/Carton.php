@@ -7,9 +7,13 @@ include('CartonEjemplo.php');
 
 class Carton implements CartonInterface {
 	protected $numeros_carton = [];
+	protected $columnas = [];
 
-  public function __construct(array $p_carton) {
+  public function __construct($p_carton) {
 		$this->numeros_carton = $this->darvuelta($p_carton);
+		$this->columnas = $p_carton;
+		//echo "asdas";
+		//print_r($p_carton);
   }
 
   public function filas() {
@@ -31,16 +35,10 @@ class Carton implements CartonInterface {
  }
 
   public function columnas() { 
-	   $coltot = [];
-		  $index = 0;
-		  foreach( ($this->filas()[0]) as $fila ){
-				$coltot[] = array( 	($this->filas()[0][$index]) , 
-							($this->filas()[1][$index]) , 
-							($this->filas()[2][$index]) );
-			  $index++;
-		  }
-		  
-		return $coltot;
+	
+	return $this->columnas;
+
+
   }
 
 
@@ -98,4 +96,7 @@ foreach( ($carton->filas()[0]) as $fila ){
 //print_r( $carton->columnas());
 //echo "askjdhakjsdas\n\n";
 //print_r( (new CartonEjemplo)->columnas());
+$carton = new Carton( (new FabricaCartones)->intentoCarton() );
+//$carton = new CartonEjemplo;
+print_r( $carton->columnas()   );
 
