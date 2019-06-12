@@ -44,7 +44,7 @@ class FabricaCartones {
 	return $bien;
   }
 
-  protected function validarCincoNumerosPorFila(CartonInterface $carton) { /// NO ANDA ESTOOOOO
+  protected function validarCincoNumerosPorFila(CartonInterface $carton) { 
 	$flag = true;
 	foreach( $carton->filas() as $fila ){
 		$cont = 0;
@@ -60,7 +60,6 @@ class FabricaCartones {
 	}
 	if(!$flag){
 		 echo "2\n";
-		var_dump($carton->filas());
 	}
 	return $flag;
   }

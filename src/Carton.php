@@ -45,5 +45,4 @@ public function tieneNumero(int $numero) {
   }
 
 }
-//var_dump(new Carton( (new FabricaCartones)->generarCarton() ));
 
