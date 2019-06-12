@@ -7,7 +7,7 @@ include('FabricaCartones.php');
 class Carton implements CartonInterface {
 	protected $numeros_carton = [];
 
-  public function __construct( $p_carton) {
+  public function __construct(array $p_carton) {
 		$this->numeros_carton = $p_carton;
   }
 
@@ -46,5 +46,5 @@ public function tieneNumero(int $numero) {
 
 }
 
-//print_r( (new Carton( (new FabricaCartones)->intentoCarton() ) )->filas());
+print_r( (new Carton( (new FabricaCartones)->intentoCarton() ) )->columnas());
 
