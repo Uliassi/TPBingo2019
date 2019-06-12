@@ -24,7 +24,7 @@ class Carton implements CartonInterface {
 			  $index++;
 		  }
 		  
-		return $coltot;
+		return [$coltot]; // ponerlo entre corchetes.
   }
 
 
