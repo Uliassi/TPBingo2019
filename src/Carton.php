@@ -33,10 +33,10 @@ class Carton implements CartonInterface {
   public function columnas() { 
 	   $coltot = [];
 		  $index = 0;
-		  foreach( $this->numeros_carton[$index] as $fila ){
-				$coltot[] = array( 	$this->numeros_carton[0][$index] , 
-							$this->numeros_carton[1][$index] , 
-							$this->numeros_carton[2][$index] );
+		  foreach( ($this->filas()[0]) as $fila ){
+				$coltot[] = array( 	($this->filas()[0][$index]) , 
+							($this->filas()[1][$index]) , 
+							($this->filas()[2][$index]) );
 			  $index++;
 		  }
 		  
@@ -61,8 +61,16 @@ public function tieneNumero(int $numero) {
   }
 
 }
+//$carton = (new Carton( (new FabricaCartones)->intentoCarton() ) );
+/*$index = 0;
+foreach( ($carton->filas()[0]) as $fila ){
+	echo ($carton->filas()[0][$index]) . " " . ($carton->filas()[1][$index]) . " " . ($carton->filas()[2][$index]) . "\n" ;
+			  
+		$index++;
+	
+}*/
 
-print_r( (new Carton( (new FabricaCartones)->intentoCarton() ) )->columnas());
-echo "askjdhakjsdas\n\n";
-print_r( (new CartonEjemplo)->columnas());
+//print_r( $carton->columnas());
+//echo "askjdhakjsdas\n\n";
+//print_r( (new CartonEjemplo)->columnas());
 
