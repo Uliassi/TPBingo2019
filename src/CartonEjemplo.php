@@ -31,14 +31,16 @@ class CartonEjemplo implements CartonInterface {
    * {@inheritdoc}
    */
   public function columnas() {
-   $coltot = [];
-	  $index = 0;
-	  foreach( $this->numeros_carton[$index] as $fila ){
-			$coltot[] = [$this->numeros_carton[0][$index],$this->numeros_carton[1][$index] , $this->numeros_carton[2][$index] ];
-		  $index++;
-	  }
-	  
-    return $coltot;
+  		$coltot = [];
+		  $index = 0;
+		  foreach( ($this->filas()[0]) as $fila ){
+				$coltot[] = array( 	($this->filas()[0][$index]) , 
+							($this->filas()[1][$index]) , 
+							($this->filas()[2][$index]) );
+			  $index++;
+		  }
+		  
+		return $coltot;
   }
 
   /**

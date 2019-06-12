@@ -61,6 +61,31 @@ public function tieneNumero(int $numero) {
   }
 
 }
+/*
+$carton = new CartonEjemplo;
+$cantcolunacelda = 0;	
+	$flag = false;
+	foreach($carton->columnas() as $col){
+		$cant = 0;
+		foreach($col as $num){
+			if($num != 0){
+				$cant++;		
+			}
+		}
+		if($cant == 1){	
+			$cantcolunacelda++;		
+		}
+	}
+	if($cantcolunacelda == 3){
+			$flag = true;
+	}
+	if($flag){
+	echo "true";	
+	}else {
+	echo "false";	
+	
+}
+    //$this->assertTrue($flag);
 //$carton = (new Carton( (new FabricaCartones)->intentoCarton() ) );
 /*$index = 0;
 foreach( ($carton->filas()[0]) as $fila ){
