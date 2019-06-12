@@ -24,7 +24,7 @@ class Carton implements CartonInterface {
 			  $index++;
 		  }
 		  
-		return $coltot; // ponerlo entre corchetes.
+		return $coltot;
   }
 
 
@@ -46,5 +46,5 @@ public function tieneNumero(int $numero) {
 
 }
 
-print_r( (new Carton( (new FabricaCartones)->intentoCarton() ) )->columnas());
+//print_r( (new Carton( (new FabricaCartones)->intentoCarton() ) )->columnas());
 
