@@ -1,7 +1,8 @@
 <?php
 namespace Bingo;
 include('CartonInterface.php');
-include('FabricaCartones.php'); 
+include('FabricaCartones.php');
+include('CartonEjemplo.php');  
 
 
 class Carton implements CartonInterface {
@@ -46,5 +47,7 @@ public function tieneNumero(int $numero) {
 
 }
 
-//print_r( (new Carton( (new FabricaCartones)->intentoCarton() ) )->columnas());
+print_r( (new Carton( (new FabricaCartones)->intentoCarton() ) )->columnas());
+echo "askjdhakjsdas\n\n";
+print_r( (new CartonEjemplo)->columnas());
 
