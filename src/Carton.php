@@ -96,7 +96,7 @@ foreach( ($carton->filas()[0]) as $fila ){
 //print_r( $carton->columnas());
 //echo "askjdhakjsdas\n\n";
 //print_r( (new CartonEjemplo)->columnas());
-$carton = new Carton( (new FabricaCartones)->intentoCarton() );
+//$carton = new Carton( (new FabricaCartones)->intentoCarton() );
 //$carton = new CartonEjemplo;
-print_r( $carton->columnas()   );
+//print_r( $carton->columnas()   );
 
