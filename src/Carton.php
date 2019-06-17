@@ -20,7 +20,7 @@ class Carton implements CartonInterface {
 
  public function darvuelta($arr){
 		$rta = [];
-	$indey = 1; /// cambiar esto de vuelta
+	$indey = 0; 
 	foreach($arr as $col){
 			$index = 0;
 		foreach($col as $num){
